@@ -3,10 +3,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ClienteTest {
 
-    private String nomecliente;
-    private String email;
-    private String telefone;
-    private String endereco;
+    private String nomecliente = "";
+    private String email = "";
+    private String telefone = "";
+    private String endereco = "";
 
     Cliente cliente = new Cliente( nomecliente , email , telefone , endereco);
 

@@ -41,7 +41,7 @@ public class Cliente {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    public boolean isValidClienteNameEmpty(String nome){
-        return nome.isEmpty();
+    public boolean isValidClienteNameEmpty(String nomecliente){
+            return nomecliente.isEmpty();
     }
 }
