@@ -5,7 +5,7 @@ public class ClienteTest {
 
     private String nomecliente = "";
     private String email = "";
-    private String telefone = "";
+    private char telefone = ' ';
     private String endereco = "";
 
     Cliente cliente = new Cliente( nomecliente , email , telefone , endereco);
@@ -13,6 +13,7 @@ public class ClienteTest {
     @Test
     public void testeNomeCliente(){
         assertTrue(cliente.isValidClienteNameEmpty(cliente.getNomecliente()));
+        System.out.println(nomecliente);
     }
     @Test
     public void testEmail(){
@@ -20,7 +21,7 @@ public class ClienteTest {
     }
     @Test
     public void testeTelefone(){
-        assertTrue(cliente.isValidClienteNameEmpty(cliente.getTelefone()));
+        assertTrue(cliente.isValidClienteTelefoneEmpty(cliente.getTelefone()));
     }
     @Test
     public void testeEndereco(){

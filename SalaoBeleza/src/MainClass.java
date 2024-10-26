@@ -48,15 +48,15 @@ public class MainClass {
 private static void cadastrarCliente() {
     System.out.println("--- Cadastro de Cliente ---");
     System.out.print("Nome: ");
-    String nome = scan.nextLine();
+    String nomecliente = scan.nextLine();
     System.out.print("Email: ");
     String email = scan.nextLine();
     System.out.print("Telefone: ");
-    String telefone = scan.nextLine();
+    long telefone = scan.nextLong();
     System.out.print("Endereço: ");
     String endereco = scan.nextLine();
 
-    Cliente cliente = new Cliente(nome, email, telefone, endereco);
+    Cliente cliente = new Cliente(nomecliente,email, telefone, endereco);
     clientes.add(cliente);
     System.out.println("Cliente cadastrado");
 }
