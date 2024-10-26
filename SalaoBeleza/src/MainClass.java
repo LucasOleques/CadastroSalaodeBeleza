@@ -88,7 +88,7 @@ private static void agendarAtendimento() {
         return;
     }
 
-    System.out.println("--- Agendamento de Atendimento ---");
+    System.out.println("--- Agendamento de Atendimento --- ");
 
     // Escolher cliente
     System.out.println("Clientes disponíveis:");
