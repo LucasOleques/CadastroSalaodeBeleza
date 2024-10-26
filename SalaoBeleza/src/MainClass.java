@@ -1,10 +1,9 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-
-public class Main {
+public class MainClass {
     private static Scanner scan = new Scanner(System.in);
-    private static ArrayList<CadastroCliente> cadastroClientes = new ArrayList<>();
-    private static ArrayList<CadastroServico> cadastroServicos = new ArrayList<>();
+    private static ArrayList<Cliente> clientes = new ArrayList<>();
+    private static ArrayList<Servico> servicos = new ArrayList<>();
     private static ArrayList<Agendamento> agendamentos = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -17,31 +16,31 @@ public class Main {
             System.out.println("  3. Agendar Atendimento");
             System.out.println("  4. Listar Atendimentos");
             System.out.println("  0. Exit");
-            System.out.println("  Escolha uma opção: ");
+            System.out.print("  Escolha uma opção: ");
             opcao = scan.nextInt();     // Opção selecionada
             scan.nextLine();    // Limpar o buffer
 
             switch (opcao) {
-            case 1:
-                cadastrarCliente();
-                break;
-            case 2:
-                cadastrarServico();
-                break;
-            case 3:
-                agendarAtendimento();
-                break;
-            case 4:
-                listarAtendimentos();
-                break;
-            case 5:
-                System.out.println("Adios");
-                break;
-            default:
+                case 0:
+                    System.out.println("Adios");
+                    break;
+                case 1:
+                    cadastrarCliente();
+                    break;
+                case 2:
+                    cadastrarServico();
+                    break;
+                case 3:
+                    agendarAtendimento();
+                    break;
+                case 4:
+                    listarAtendimentos();
+                    break;
+                    default:
                 System.out.println("Opção inválida!");
         }
 
-    } while (opcao != 5);
+    } while (opcao != 0);
 }
 
 // Método para cadastrar cliente
@@ -56,8 +55,8 @@ private static void cadastrarCliente() {
     System.out.print("Endereço: ");
     String endereco = scan.nextLine();
 
-    CadastroCliente cliente = new CadastroCliente(nome, email, telefone, endereco);
-    cadastroClientes.add(cliente);
+    Cliente cliente = new Cliente(nome, email, telefone, endereco);
+    clientes.add(cliente);
     System.out.println("Cliente cadastrado");
 }
 
@@ -71,19 +70,19 @@ private static void cadastrarServico() {
     System.out.print("Valor do Serviço: ");       //Ex. Valor a ser pago do serviço.
     String valor = scan.nextLine();
 
-    CadastroServico servico = new CadastroServico(nome, descricaoservico , valor);
-    cadastroServicos.add(servico);
+    Servico servico = new Servico(nome, descricaoservico , valor);
+    servicos.add(servico);
     System.out.println("Serviço cadastrado");
 }
 
 // Método para agendar atendimento
 private static void agendarAtendimento() {
-    if (cadastroClientes.isEmpty()) {
+    if (clientes.isEmpty()) {
         System.out.println("Não há clientes cadastrados.");
         return;
     }
 
-    if (cadastroServicos.isEmpty()) {
+    if (servicos.isEmpty()) {
         System.out.println("Não há serviços cadastrados.");
         return;
     }
@@ -92,21 +91,21 @@ private static void agendarAtendimento() {
 
     // Escolher cliente
     System.out.println("Clientes disponíveis:");
-    for (int i = 0; i < cadastroClientes.size(); i++) {
-        System.out.println((i + 1) + ". " + cadastroClientes.get(i).getNome());
+    for (int i = 0; i < clientes.size(); i++) {
+        System.out.println((i + 1) + ". " + clientes.get(i).getNomecliente());
     }
     System.out.print("Escolha o número do cliente: ");
     int clienteIndex = scan.nextInt() - 1;
-    CadastroCliente cliente = cadastroClientes.get(clienteIndex);
+    Cliente cliente = clientes.get(clienteIndex);
 
     // Escolher serviço
     System.out.println("Serviços disponíveis:");
-    for (int i = 0; i < cadastroServicos.size(); i++) {
-        System.out.println((i + 1) + ". " + cadastroServicos.get(i).getNome());
+    for (int i = 0; i < servicos.size(); i++) {
+        System.out.println((i + 1) + ". " + servicos.get(i).getNome());
     }
     System.out.print("Escolha o número do serviço: ");
     int servicoIndex = scan.nextInt() - 1;      // -1 por fazer a leitura do 'zero'
-    CadastroServico servico = cadastroServicos.get(servicoIndex);
+    Servico servico = servicos.get(servicoIndex);
 
     // Data e horário
     System.out.print("Data: ");

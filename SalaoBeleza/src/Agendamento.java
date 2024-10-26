@@ -1,11 +1,11 @@
 public class Agendamento {
 
-    private CadastroCliente cliente;
-    private CadastroServico servico;
+    private Cliente cliente;
+    private Servico servico;
     private String data;
     private String horario;
 
-    public Agendamento(CadastroCliente cliente, CadastroServico servico, String data, String horario) {
+    public Agendamento(Cliente cliente, Servico servico, String data, String horario) {
         this.cliente = cliente;
         this.servico = servico;
         this.data = data;
@@ -13,17 +13,17 @@ public class Agendamento {
     }
 
     //Getters & Setters
-    public CadastroCliente getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
-    public void setCliente(CadastroCliente cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public CadastroServico getServico() {
+    public Servico getServico() {
         return servico;
     }
-    public void setServico(CadastroServico servico) {
+    public void setServico(Servico servico) {
         this.servico = servico;
     }
 
@@ -43,6 +43,6 @@ public class Agendamento {
 
     @Override
     public String toString() {
-        return "Atendimento: " + cliente.getNome() + " - Serviço: " + servico.getNome() + " - Data: " + data + " - Horário: " + horario;
+        return "Atendimento: " + cliente.getNomecliente() + " - Serviço: " + servico.getNome() + " - Data: " + data + " - Horário: " + horario;
     }
 }
