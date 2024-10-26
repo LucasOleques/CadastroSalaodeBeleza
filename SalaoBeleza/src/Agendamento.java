@@ -45,4 +45,7 @@ public class Agendamento {
     public String toString() {
         return "Atendimento: " + cliente.getNomecliente() + " - Serviço: " + servico.getNome() + " - Data: " + data + " - Horário: " + horario;
     }
+    public boolean isValidAgendamentoToStringEmpty(String toString) {
+        return toString.isEmpty();
+    }
 }

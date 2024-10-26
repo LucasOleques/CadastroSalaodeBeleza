@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
 public class MainClass {
     private static Scanner scan = new Scanner(System.in);
     private static ArrayList<Cliente> clientes = new ArrayList<>();
