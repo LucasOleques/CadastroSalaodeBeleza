@@ -7,7 +7,7 @@ o sistema deve saber: nome, e-mail, telefone e endereço.
 Requisitos Funcionais:
 - Cadastrar os Clientes;
 - Cadastrar o Serviço;
-- Cadastrar o Agendamento do Atendimento;
+- Cadastrar o Model.Agendamento do Atendimento;
 
 Requisitos Não Funcionais:
 - Disponibilidade;
