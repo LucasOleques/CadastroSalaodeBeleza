@@ -8,7 +8,7 @@ public class ClienteTest {
 
     private String nomecliente = "";
     private String email = "";
-    private long telefone = ' ';
+    private int telefone = ' ';
     private String endereco = "";
 
     Cliente cliente = new Cliente( nomecliente , email , telefone , endereco);

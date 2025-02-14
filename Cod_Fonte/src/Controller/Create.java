@@ -20,7 +20,6 @@ public class Create {
     public static void cadastrarCliente() {
 
         System.out.println("--- Cadastro de Cliente ---");
-
         System.out.print("Nome: ");
         String nomecliente = scan.nextLine();
         while(nomecliente == null || nomecliente.isEmpty()){
@@ -38,8 +37,8 @@ public class Create {
         }
 
         System.out.print("Telefone: ");
-        double telefone = scan.nextInt();
-        scan.nextLine();
+        String telefone1 = scan.nextLine();
+        int telefone = Integer.parseInt(telefone1);
 
         System.out.print("Endereço: ");
         String endereco = scan.nextLine();

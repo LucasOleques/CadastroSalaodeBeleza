@@ -4,11 +4,11 @@ public class Cliente {
 
     private String nomecliente;
     private String email;
-    private double telefone;
+    private int telefone;
     private String endereco;
 
     //Construtor
-    public Cliente(String nomecliente, String email, double telefone, String endereco) {
+    public Cliente(String nomecliente, String email, int telefone, String endereco) {
         this.nomecliente = nomecliente;
         this.email = email;
         this.telefone = telefone;
@@ -31,10 +31,10 @@ public class Cliente {
         this.email = email;
     }
 
-    public double getTelefone() {
+    public int getTelefone() {
         return telefone;
     }
-    public void setTelefone(double telefone) {
+    public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
 
@@ -48,7 +48,7 @@ public class Cliente {
     public boolean isValidClienteNameEmpty(String nomecliente){
         return nomecliente.isEmpty();
     }
-    public boolean isValidClienteTelefoneEmpty(double telefone){
+    public boolean isValidClienteTelefoneEmpty(int telefone){
         return telefone == 11; //Telefone pelo minimo 9 numeros (01) 23456-7890
     }
 }
